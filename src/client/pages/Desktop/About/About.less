@@ -1,0 +1,43 @@
+@import "../../../variables.less";
+
+.intro {
+    position: absolute;
+    top: 10vh;
+    left: 5%;
+    height: 80vh;
+    width: 90%;
+    background-color: @color2;
+    z-index: -2;
+
+    .about {
+        position: relative;
+        left: 20%;
+        top: calc(40vh - 150px);
+
+        .raise-warpper {
+            height: auto;
+            overflow: hidden;
+
+            .listitem {
+                position: relative;
+                margin-bottom: 0px;
+            }
+
+            h3 {
+                margin: 0;
+                font-size: 28px;
+                position: relative;
+                white-space: nowrap;
+            }
+
+            h4 {
+                margin: 0;
+                color: white;
+                font-size: 24px;
+                line-height: 36px;
+                position: relative;
+                white-space: nowrap;
+            }
+        }
+    }
+}

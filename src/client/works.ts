@@ -1,0 +1,196 @@
+export interface WorkData {
+    id: string;
+    type: "design" | "development";
+    h2: string;
+    h1: string;
+    p: string;
+    tools: string[];
+    date: string;
+    cover_image_url: string;
+    images: string[];
+    youtube_id: string | undefined;
+    github: string | undefined;
+}
+
+export const works: WorkData[] = [
+    {
+        id: "ipass_redesign",
+        h2: "介面設計",
+        h1: "一卡通 UI Redesign",
+        p:
+            "我用於 UI 設計的練習作品，用市面上已有的一卡通 App 進行重新設計",
+        tools: ["Adobe Illustrator", "Adobe Xd"],
+        date: "2020 年 6 月",
+        type: "design",
+        cover_image_url: "https://i.imgur.com/h1Owkzil",
+        images: [
+            "https://i.imgur.com/h1Owkzil",
+            "https://i.imgur.com/6KnSZjvl",
+            "https://i.imgur.com/d3jf3PUl",
+            "https://i.imgur.com/SE6lP9Ol",
+            "https://i.imgur.com/A6Xc3I2l",
+            "https://i.imgur.com/5qNK16Sl",
+            "https://i.imgur.com/8fYcRwTl",
+            "https://i.imgur.com/8fYcRwTl",
+        ],
+        youtube_id: undefined,
+        github: undefined,
+    },
+    {
+        id: "after_movie",
+        h2: "影音剪輯",
+        h1: "活動紀錄電影",
+        p: "我在高中時期為社團社慶的活動紀錄進行剪輯",
+        tools: ["Adobe Premiere Pro"],
+        date: "2019 年 4 月",
+        type: "design",
+        cover_image_url: "https://i.imgur.com/sjKGEujl",
+        images: [],
+        youtube_id: "awm98eUD6gU",
+        github: undefined,
+    },
+    {
+        id: "main-visions",
+        h2: "平面設計",
+        h1: "活動主視覺橫幅",
+        p: "我在高中時期為社團舉辦的各種活動設計的活動主視覺橫幅",
+        tools: ["Adobe Photoshop", "Adobe illustrator"],
+        date: "2019 年 4 月",
+        type: "design",
+        cover_image_url: "https://i.imgur.com/1rgFf2sl",
+        images: [
+            "https://i.imgur.com/1rgFf2sl",
+            "https://i.imgur.com/wj1pWUyl",
+            "https://i.imgur.com/86lJFdBl",
+        ],
+        youtube_id: undefined,
+        github: undefined,
+    },
+    {
+        id: "application-packet",
+        h2: "平面設計",
+        h1: "大學備審資料設計",
+        p: "我用於申請大學所提交的備審資料",
+        tools: ["Adobe Indesign"],
+        date: "2019 年 5 月",
+        type: "design",
+        cover_image_url: "https://i.imgur.com/BXIbnEEl",
+        images: [
+            "https://i.imgur.com/BXIbnEEl",
+            "https://i.imgur.com/kJCWgXEl",
+            "https://i.imgur.com/TsVkcZkl",
+            "https://i.imgur.com/VdLiY0Ql",
+            "https://i.imgur.com/DcmriBwl",
+            "https://i.imgur.com/EkrXADCl",
+            "https://i.imgur.com/kmzgJ43l",
+            "https://i.imgur.com/gUzRnjOl",
+            "https://i.imgur.com/tsCryGrl",
+            "https://i.imgur.com/rP3bIdMl",
+            "https://i.imgur.com/UwIEcM2l",
+            "https://i.imgur.com/0oFWeQjl",
+            "https://i.imgur.com/c8icM95l",
+            "https://i.imgur.com/PCIYnBvl",
+        ],
+        youtube_id: undefined,
+        github: undefined,
+    },
+    {
+        id: "schedule",
+        h2: "微信小程序",
+        h1: "輕排班",
+        p: "我和大學同學參加 2020 微信小程序競賽製作的排班小程序",
+        tools: ["Taro", "React Native", "Typescript"],
+        date: "2020 年 2 月",
+        type: "development",
+        cover_image_url: "https://i.imgur.com/AitULXfl",
+        images: [],
+        youtube_id: "9qNr4hSvSyc",
+        github: "https://github.com/ken20001207/schedule",
+    },
+    {
+        id: "reco",
+        h2: "跨平台軟體",
+        h1: "Reco 行事曆平台",
+        p:
+            "我用於練習 React 以及 Typescript 而自己開始的跨平台行事曆系統專案",
+        tools: [
+            "React",
+            "React Native",
+            "Electron",
+            "Typescript",
+            "Python Flask",
+            "MongoDB",
+        ],
+        date: "2020 年 1 月",
+        type: "development",
+        cover_image_url: "https://i.imgur.com/fReUx9Nl",
+        images: [
+            "https://i.imgur.com/fReUx9Nl",
+            "https://i.imgur.com/5kMdAtSl",
+            "https://i.imgur.com/8AVW8uAl",
+        ],
+        youtube_id: undefined,
+        github: "https://github.com/ken20001207/reco-desktop",
+    },
+    {
+        id: "fetch1688",
+        h2: "API 介接",
+        h1: "商品資料匯入程式",
+        p:
+            "我為經營電商的案主編寫的 Python 程式，透過配合的後端 API 將即時的商品資料匯入 MySQL 資料庫",
+        tools: ["Python", "MySQL"],
+        date: "2020 年 4 月",
+        type: "development",
+        cover_image_url: "https://i.imgur.com/SkbvAuxl",
+        images: [],
+        youtube_id: "b8-oIN55vik",
+        github: "https://github.com/ken20001207/fetch1688",
+    },
+    {
+        id: "statistic",
+        h2: "桌面應用程式",
+        h1: "開獎機率統計軟體",
+        p:
+            "我為案主編寫的開獎機率統計程式，從案主要求的網站抓取比賽數據進行統計後以圖表形式顯示",
+        tools: ["React", "Typescript", "Electron"],
+        date: "2020 年 4 月",
+        type: "development",
+        cover_image_url: "https://i.imgur.com/ljbm4iOl",
+        images: [
+            "https://i.imgur.com/Px2vs0gl",
+            "https://i.imgur.com/EoQlhKBl",
+            "https://i.imgur.com/ljbm4iOl",
+            "https://i.imgur.com/47NstXDl",
+        ],
+        youtube_id: undefined,
+        github: "https://github.com/ken20001207/statistic",
+    },
+    {
+        id: "hoost-manager",
+        h2: "廠商後台",
+        h1: "Hoost 軟體管理後台",
+        p:
+            "我為新創團隊 Hoost 製作的 App 管理後台，能夠串接團隊的 API 對系統數據進行查詢及操作",
+        tools: ["React", "Typescript"],
+        date: "2020 年 5 月",
+        type: "development",
+        cover_image_url: "https://i.imgur.com/AmONwLkl",
+        images: ["https://i.imgur.com/AmONwLkl"],
+        youtube_id: undefined,
+        github: undefined,
+    },
+    {
+        id: "vueshop",
+        h2: "電商系統",
+        h1: "VueShop 電商系統",
+        p:
+            "我為想要嘗試電商的案主架設的全套電子商務系統，包含了客戶前端網站、廠商後台、系統後端、資料庫管理、金流串接",
+        tools: ["Vue", "Express", "MySQL"],
+        date: "2019 年 12 月",
+        type: "development",
+        cover_image_url: "https://i.imgur.com/lUlcmlll",
+        images: ["https://i.imgur.com/lUlcmlll"],
+        youtube_id: undefined,
+        github: "https://github.com/ken20001207/VueShop",
+    },
+];
