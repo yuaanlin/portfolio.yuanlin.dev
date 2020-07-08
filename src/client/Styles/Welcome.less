@@ -1,0 +1,56 @@
+@import "./variables.less";
+
+.welcome-main {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    margin-top: 10vh;
+    height: 80vh;
+
+    .title-outer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 80vh;
+
+        .title {
+            white-space: nowrap;
+            vertical-align: bottom;
+            h1 {
+                position: relative;
+                font-size: 108px;
+                line-height: 108px;
+                margin: 0px;
+            }
+
+            h2 {
+                position: relative;
+                font-size: 72px;
+                line-height: 72px;
+                margin: 0px;
+            }
+        }
+    }
+}
+
+.title-mobile {
+    left: calc(50% - 118px);
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: bottom;
+    h1 {
+        position: relative;
+        font-size: 72px;
+        line-height: 72px;
+        margin: 0px;
+    }
+
+    h2 {
+        position: relative;
+        font-size: 48px;
+        line-height: 48px;
+        margin: 0px;
+    }
+}

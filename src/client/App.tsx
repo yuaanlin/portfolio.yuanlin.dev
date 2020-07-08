@@ -1,17 +1,17 @@
-import React, { Component, Suspense } from "react";
-import "./App.less";
-
-import Topnav from "./components/Topnav/Topnav";
-import SocialLinks from "./components/SocialLinks/SocialLinks";
-import ScrollIndicator from "./components/Desktop/ScrollIndicator/ScrollIndicator";
-
-import ScrollIndicatorM from "./components/Mobile/ScrollIndicator/ScrollIndicator";
-import Welcome from "./pages/Desktop/Welcome/Welcome";
-import About from "./pages/Desktop/About/About";
-import MyService from "./pages/Desktop/MyService/MyService";
-import DesignPortfolio from "./pages/Desktop/DesignPortfolio/DesignPortfolio";
-import DevPortfolio from "./pages/Desktop/DevPortfolio/DevPortfolio";
-import Contact from "./pages/Desktop/Contact/Contact";
+import React, { Component } from "react";
+import {
+    ScrollIndicatorD,
+    ScrollIndicatorM,
+} from "./components/ScrollIndicator";
+import SocialLinks from "./components/SocialLinks";
+import Topnav from "./components/Topnav";
+import { AboutD, AboutM } from "./pages/About";
+import { ContactD, ContactM } from "./pages/Contact";
+import { DesignPortfolioD, DesignPortfolioM } from "./pages/DesignPortfolio";
+import { DevPortfolioD, DevPortfolioM } from "./pages/DevPortfolio";
+import { MyServiceD, MyServiceM } from "./pages/MyService";
+import { WelcomeD, WelcomeM } from "./pages/Welcome";
+import "./Styles/App.less";
 
 interface State {
     page: number;
@@ -48,10 +48,7 @@ class App extends Component<{}, State> {
             this.setState({ mobile: true });
 
         // timer for animation
-        setInterval(
-            () => this.setState({ timer: this.state.timer + 1 }),
-            1000
-        );
+        setInterval(() => this.setState({ timer: this.state.timer + 1 }), 1000);
 
         // scroll listener
         window.addEventListener("scroll", () => {
@@ -78,16 +75,17 @@ class App extends Component<{}, State> {
                 <div className="main">
                     <Topnav mobile={this.state.mobile} />
                     <SocialLinks />
-                    <ScrollIndicator
+                    <ScrollIndicatorD
+                        mobile={this.state.mobile}
                         page={this.state.page}
                         timer={this.state.timer}
                     />
-                    <Welcome page={this.state.page} />
-                    <About page={this.state.page} />
-                    <MyService page={this.state.page} />
-                    <DesignPortfolio page={this.state.page} />
-                    <DevPortfolio page={this.state.page} />
-                    <Contact page={this.state.page} />
+                    <WelcomeD page={this.state.page} />
+                    <AboutD page={this.state.page} />
+                    <MyServiceD page={this.state.page} />
+                    <DesignPortfolioD page={this.state.page} />
+                    <DevPortfolioD page={this.state.page} />
+                    <ContactD page={this.state.page} />
                 </div>
             );
         else
@@ -99,6 +97,12 @@ class App extends Component<{}, State> {
                         page={this.state.page}
                         timer={this.state.timer}
                     />
+                    <WelcomeM page={this.state.page} />
+                    <AboutM page={this.state.page} />
+                    <MyServiceM page={this.state.page} />
+                    <DesignPortfolioM page={this.state.page} />
+                    <DevPortfolioM page={this.state.page} />
+                    <ContactM page={this.state.page} />
                 </div>
             );
     }
