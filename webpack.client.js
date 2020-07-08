@@ -1,15 +1,17 @@
 const path = require("path");
+const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = {
     target: "node",
-    devtool: "source-map",
     entry: "./src/client/index.tsx",
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json", ".css"],
     },
+    plugins: [new CleanWebpackPlugin()],
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "public"),
+        path: path.resolve(__dirname, "public/assets/js"),
     },
     module: {
         rules: [

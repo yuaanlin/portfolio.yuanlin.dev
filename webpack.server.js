@@ -3,7 +3,9 @@ const webpackNodeExternals = require("webpack-node-externals");
 
 module.exports = {
     target: "node",
-    entry: "./src/index.tsx",
+    entry: {
+        app: "./src/index.tsx",
+    },
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json"],
     },
