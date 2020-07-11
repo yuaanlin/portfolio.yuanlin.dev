@@ -114,12 +114,16 @@ export class DesignPortfolioD extends React.Component<Props, State> {
                     </Col>
                 </Row>
 
-                <WorkDetailD
-                    watching_work={this.state.watchingWork}
-                    watchingWork_opened={this.state.watchingWork_opened}
-                    work_window_zindex={this.state.workWindowZindex}
-                    toggle_watch_work={this.toggle_watch_work}
-                />
+                {this.state.watchingWork ? (
+                    <WorkDetailD
+                        watching_work={this.state.watchingWork}
+                        watchingWork_opened={this.state.watchingWork_opened}
+                        work_window_zindex={this.state.workWindowZindex}
+                        toggle_watch_work={this.toggle_watch_work}
+                    />
+                ) : (
+                    <div />
+                )}
             </div>
         );
     }
@@ -208,13 +212,16 @@ export class DesignPortfolioM extends Component<Props, State> {
                     watching_work={this.state.watchingWork}
                     toggle_watch_work={this.toggle_watch_work}
                 />
-
-                <WorkDetailM
-                    watching_work={this.state.watchingWork}
-                    watchingWork_opened={this.state.watchingWork_opened}
-                    work_window_zindex={this.state.workWindowZindex}
-                    toggle_watch_work={this.toggle_watch_work}
-                />
+                {this.state.watchingWork ? (
+                    <WorkDetailM
+                        watching_work={this.state.watchingWork}
+                        watchingWork_opened={this.state.watchingWork_opened}
+                        work_window_zindex={this.state.workWindowZindex}
+                        toggle_watch_work={this.toggle_watch_work}
+                    />
+                ) : (
+                    <div />
+                )}
             </div>
         );
     }
