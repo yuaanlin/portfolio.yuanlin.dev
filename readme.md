@@ -1,6 +1,6 @@
 # portfolio-ssr
 
-My portfolio website served with React SSR (Server Side Rendering). Deploy on Google Cloud Platform.
+My portfolio website. Deploy on Google Cloud Platform.
 
 Online version : https://linyuanlin.com
 
