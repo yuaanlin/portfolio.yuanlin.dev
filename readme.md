@@ -14,6 +14,8 @@ Online version : https://linyuanlin.com
 
 `yarn dev` Build both client and server, also listening file changes.
 
-`yarn dev:build:client` Build client into bundle.
+`yarn dev:build:client` Build client into bundle. It will inject bundle.js into public/assets/js.
 
 `yarn dev:build:server` Build server into bundle.
+
+`serve public` Serve built website locally.
