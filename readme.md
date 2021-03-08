@@ -1,6 +1,6 @@
 # Portfolio
 
-My portfolio website. Deploy on Google Cloud Platform.
+My portfolio website. Deployed on Google Cloud Platform.
 
 Online version : https://linyuanlin.com
 
