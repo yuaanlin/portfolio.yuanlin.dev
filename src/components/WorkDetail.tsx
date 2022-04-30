@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Col, Row } from "react-grid-system";
 import { Spring } from "react-spring/renderprops";
-import "../Styles/WorkDetail.less";
+import "../styles/WorkDetail.less";
 import { WorkData } from "../works";
 import Raising from "./Raising";
 

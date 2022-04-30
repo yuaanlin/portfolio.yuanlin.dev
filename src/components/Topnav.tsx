@@ -1,6 +1,6 @@
 import React from "react";
 import { Col, Row } from "react-grid-system";
-import "../Styles/Topnav.less";
+import "../styles/Topnav.less";
 
 interface Props {
     mobile: boolean;

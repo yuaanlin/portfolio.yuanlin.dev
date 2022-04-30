@@ -2,7 +2,7 @@ import * as easing from "d3-ease";
 import React from "react";
 import { Spring } from "react-spring/renderprops";
 import { zh_tw } from "../lang";
-import "../Styles/ScrollIndicator.less";
+import "../styles/ScrollIndicator.less";
 
 interface Props {
     page: number;

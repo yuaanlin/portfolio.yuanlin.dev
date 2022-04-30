@@ -1,5 +1,5 @@
 import React from "react";
-import "../Styles/SocialLinks.less";
+import "../styles/SocialLinks.less";
 
 export default class SocialLinks extends React.Component {
     render() {

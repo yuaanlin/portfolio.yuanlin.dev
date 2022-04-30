@@ -2,7 +2,7 @@ import * as easing from "d3-ease";
 import React, { Component } from "react";
 import { Spring } from "react-spring/renderprops";
 import Raising from "../components/Raising";
-import "../Styles/Welcome.less";
+import "../styles/Welcome.less";
 
 interface Props {
     page: number;

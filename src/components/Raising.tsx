@@ -1,7 +1,7 @@
 import * as easing from "d3-ease";
-import React from "react";
+import React, { PropsWithChildren } from "react";
 import { Spring } from "react-spring/renderprops";
-import "../Styles/Raising.less";
+import "../styles/Raising.less";
 
 interface Props {
     active: boolean;
@@ -9,7 +9,7 @@ interface Props {
     delay?: number;
 }
 
-export default class Raising extends React.Component<Props> {
+export default class Raising extends React.Component<PropsWithChildren<Props>> {
     static defaultProps = {
         height: 72,
         delay: 0,

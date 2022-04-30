@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Raising from "../components/Raising";
-import "../Styles/Contact.less";
+import "../styles/Contact.less";
 
 interface Props {
     page: number;

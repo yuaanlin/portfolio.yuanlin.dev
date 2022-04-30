@@ -4,7 +4,7 @@ import { Col, Row } from "react-grid-system";
 import { Spring, Trail } from "react-spring/renderprops";
 import Raising from "../components/Raising";
 import { zh_tw } from "../lang";
-import "../Styles/MyService.less";
+import "../styles/MyService.less";
 
 interface Props {
     page: number;

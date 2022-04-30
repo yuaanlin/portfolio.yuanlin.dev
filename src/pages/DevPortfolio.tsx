@@ -3,7 +3,7 @@ import { Col, Row } from "react-grid-system";
 import Raising from "../components/Raising";
 import { WorkDetailD, WorkDetailM } from "../components/WorkDetail";
 import { WorkListD, WorkListM } from "../components/WorkList";
-import "../Styles/DesignPortfolio.less";
+import "../styles/DevPortfolio.less";
 import { WorkData } from "../works";
 
 interface Props {
@@ -12,24 +12,45 @@ interface Props {
 
 interface State {
     watchingWork: WorkData | undefined;
-    workWindowZindex: number;
     watchingWork_opened: boolean;
+    workWindowZindex: number;
     image: number;
 }
 
-const pageCode = 3;
+const pageCode = 4;
 
-export class DesignPortfolioD extends React.Component<Props, State> {
+export class DevPortfolioD extends Component<Props, State> {
     rightcol: HTMLDivElement | null = null;
+
     constructor(props: Readonly<Props>) {
         super(props);
         this.state = {
+            image: 0,
             watchingWork_opened: false,
             watchingWork: undefined,
             workWindowZindex: -1,
-            image: 0,
         };
     }
+
+    chage_image = (next: boolean) => {
+        if (next) {
+            if (
+                this.state.image + 1 ===
+                this.state.watchingWork?.images.length
+            ) {
+                this.setState({ image: 0 });
+            } else this.setState({ image: this.state.image + 1 });
+        } else {
+            if (this.state.image === 0) {
+                this.setState({
+                    image:
+                        (this.state.watchingWork?.images.length
+                            ? this.state.watchingWork?.images.length
+                            : 1) - 1,
+                });
+            } else this.setState({ image: this.state.image - 1 });
+        }
+    };
 
     toggle_watch_work = (work: WorkData | undefined) => {
         if (work)
@@ -62,14 +83,14 @@ export class DesignPortfolioD extends React.Component<Props, State> {
         const page = this.props.page;
         return (
             <div
-                className="design-portfolio-main"
+                className="dev-portfolio-main"
                 style={{
                     zIndex: page === pageCode ? 40 : -1,
                 }}
             >
                 <Row>
                     <Col
-                        lg={6}
+                        lg={4}
                         style={{
                             height: "80vh",
                             paddingLeft: "10%",
@@ -78,42 +99,41 @@ export class DesignPortfolioD extends React.Component<Props, State> {
                         <div className="des">
                             <Raising
                                 active={page === pageCode}
-                                delay={page === pageCode ? 1200 : 450}
+                                delay={page === pageCode ? 600 : 450}
                             >
-                                <h1 className="highlight1">設計作品</h1>
+                                <h1 className="highlight1">開發作品</h1>
                             </Raising>
                             <Raising
                                 active={page === pageCode}
                                 height={108}
-                                delay={page === pageCode ? 1350 : 300}
+                                delay={page === pageCode ? 750 : 300}
                             >
-                                <p>為您精選四個過去的設計專案</p>
-                                <p>點擊作品可以查看更詳細的內容哦！</p>
+                                <p>為您精選六個過去的開發專案</p>
+                                <p>點擊作品可以查看更詳細的諮詢</p>
                             </Raising>
                             <Raising
                                 active={page === pageCode}
-                                delay={page === pageCode ? 1500 : 150}
+                                delay={page === pageCode ? 900 : 150}
                             >
                                 <p style={{ color: "gray" }}>
                                     想看更多？歡迎查看我的{" "}
-                                    <a href="https://www.behance.net/yuanlinlin">
-                                        Behence
+                                    <a href="https://github.com/ken20001207">
+                                        Github
                                     </a>{" "}
                                     帳號
                                 </p>
                             </Raising>
                         </div>
                     </Col>
-                    <Col lg={6}>
+                    <Col lg={8}>
                         <WorkListD
-                            type="design"
+                            type="development"
                             show={page === pageCode}
                             watching_work={this.state.watchingWork}
                             toggle_watch_work={this.toggle_watch_work}
                         />
                     </Col>
                 </Row>
-
                 {this.state.watchingWork ? (
                     <WorkDetailD
                         watching_work={this.state.watchingWork}
@@ -129,17 +149,38 @@ export class DesignPortfolioD extends React.Component<Props, State> {
     }
 }
 
-export class DesignPortfolioM extends Component<Props, State> {
+export class DevPortfolioM extends Component<Props, State> {
     rightcol: HTMLDivElement | null = null;
+
     constructor(props: Readonly<Props>) {
         super(props);
         this.state = {
+            image: 0,
             watchingWork_opened: false,
             watchingWork: undefined,
             workWindowZindex: -1,
-            image: 0,
         };
     }
+
+    chage_image = (next: boolean) => {
+        if (next) {
+            if (
+                this.state.image + 1 ===
+                this.state.watchingWork?.images.length
+            ) {
+                this.setState({ image: 0 });
+            } else this.setState({ image: this.state.image + 1 });
+        } else {
+            if (this.state.image === 0) {
+                this.setState({
+                    image:
+                        (this.state.watchingWork?.images.length
+                            ? this.state.watchingWork?.images.length
+                            : 1) - 1,
+                });
+            } else this.setState({ image: this.state.image - 1 });
+        }
+    };
 
     toggle_watch_work = (work: WorkData | undefined) => {
         if (work)
@@ -172,7 +213,7 @@ export class DesignPortfolioM extends Component<Props, State> {
         const page = this.props.page;
         return (
             <div
-                className="design-portfolio-main-mobile"
+                className="dev-portfolio-main-mobile"
                 style={{
                     zIndex: page === pageCode ? 400 : -1,
                 }}
@@ -180,38 +221,36 @@ export class DesignPortfolioM extends Component<Props, State> {
                 <div className="des">
                     <Raising
                         active={page === pageCode}
-                        delay={page === pageCode ? 1200 : 450}
+                        delay={page === pageCode ? 600 : 450}
                     >
-                        <h1 className="highlight1">設計作品</h1>
+                        <h1 className="highlight1">開發作品</h1>
                     </Raising>
                     <Raising
                         active={page === pageCode}
                         height={108}
-                        delay={page === pageCode ? 1350 : 300}
+                        delay={page === pageCode ? 750 : 300}
                     >
-                        <p>為您精選四個過去的設計專案</p>
-                        <p>點擊作品可以查看更詳細的內容哦！</p>
+                        <p>為您精選六個過去的開發專案</p>
+                        <p>點擊作品可以查看更詳細的諮詢</p>
                     </Raising>
                     <Raising
                         active={page === pageCode}
-                        delay={page === pageCode ? 1500 : 150}
+                        delay={page === pageCode ? 900 : 150}
                     >
                         <p style={{ color: "gray" }}>
-                            想看更多？歡迎查看我的
-                            <a href="https://www.behance.net/yuanlinlin">
-                                Behence
-                            </a>
+                            想看更多？歡迎查看我的{" "}
+                            <a href="https://github.com/ken20001207">Github</a>{" "}
                             帳號
                         </p>
                     </Raising>
                 </div>
-
                 <WorkListM
-                    type="design"
+                    type="development"
                     show={page === pageCode}
                     watching_work={this.state.watchingWork}
                     toggle_watch_work={this.toggle_watch_work}
                 />
+
                 {this.state.watchingWork ? (
                     <WorkDetailM
                         watching_work={this.state.watchingWork}

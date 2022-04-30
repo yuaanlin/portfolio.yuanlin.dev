@@ -2,7 +2,7 @@ import { easeCubicInOut } from "d3-ease";
 import React, { Component } from "react";
 import { Col, Row } from "react-grid-system";
 import { Spring, Trail } from "react-spring/renderprops";
-import "../Styles/WorkList.less";
+import "../styles/WorkList.less";
 import { WorkData, works } from "../works";
 
 interface Props {
